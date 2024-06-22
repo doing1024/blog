@@ -7,7 +7,6 @@ from github.Repository import Repository
 import os
 import time
 import codecs
-from word_cloud import WordCloudGenerator
 
 user : Github
 username : str
@@ -65,15 +64,6 @@ def bundle_list_by_labels_section():
     global username
     global blogname
 
-
-    # word cloud
-    wordcloud_image_url = WordCloudGenerator(blogrepo).generate()
-
-    list_by_labels_section = """
-<summary>
-    <img src="%s" title="词云" alt="词云" href="https://%s.github.io/%s/">
-</summary>  
-""" % (wordcloud_image_url,username,blogname)
 
     all_labels = blogrepo.get_labels()
     for label in all_labels:
