@@ -50,7 +50,7 @@ def format_issue(issue: Issue):
     return '- %s [%s](%s) \n' % (
             issue.created_at.strftime('%Y-%m-%d'),
             issue.title,
-            issue.html_url)
+            issue.html_url.replace("github","kkgithub"))
 
 
 def update_readme_md_file(contents):
